@@ -58,6 +58,8 @@ export const RolePeriod = styled.span`
 `;
 
 export const Bullets = styled.ul`
+  max-width: 960px;
+
   li {
     list-style: disc;
     margin-left: 20px;

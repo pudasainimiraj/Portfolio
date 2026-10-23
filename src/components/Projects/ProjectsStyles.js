@@ -9,9 +9,9 @@ export const Img = styled.img`
 
 export const GridContainer = styled.section`
 display: grid;
-grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-padding: 3rem;
-place-items: center;
+grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+padding: 3rem 0;
+align-items: stretch;
 column-gap: 2rem;
 row-gap: 3rem;
 @media ${(props) => props.theme.breakpoints.sm} {
