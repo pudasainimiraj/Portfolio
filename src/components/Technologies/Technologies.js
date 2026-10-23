@@ -1,65 +1,44 @@
 import React from 'react';
-import { DiFirebase, DiReact, DiZend } from 'react-icons/di';
+import { FaBrain, FaCode, FaDatabase } from 'react-icons/fa';
 import { Section, SectionDivider, SectionText, SectionTitle } from '../../styles/GlobalComponents';
 import { List, ListContainer, ListItem, ListParagraph, ListTitle } from './TechnologiesStyles';
+import { skills } from '../../constants/constants';
+
+const icons = [FaBrain, FaDatabase, FaCode];
 
 const Technologies = () =>  (
   <div>
-    <Section id='tech'>
+    <Section id='skills'>
       <SectionTitle>
         Skills
       </SectionTitle>
       <SectionText>
-        Skills that I'm fimiliar with
+        What I use at work and in my own projects.
       </SectionText>
       <SectionDivider>
-      
+
       </SectionDivider>
       <List>
-        <ListItem>
-          <DiFirebase size="3rem"/>
-          <ListContainer>
-            <ListTitle>
-              Front End
-            </ListTitle>
-            <ListParagraph>
-              React.js <br />
-              Chakra UI <br />
-            </ListParagraph>
-          </ListContainer>
-        </ListItem>
-        <ListItem>
-          <DiFirebase size="3rem"/>
-          <ListContainer>
-            <ListTitle>
-              Back-end
-            </ListTitle>
-            <ListParagraph>
-              Node.js <br />
-              OOP <br />
-              SQL <br/>
-              API Development<br/>
-              Cloud Server <br/>
-            </ListParagraph>
-          </ListContainer>
-        </ListItem>
-        <ListItem>
-          <DiFirebase size="3rem"/>
-          <ListContainer>
-            <ListTitle>
-              Data Engineering
-            </ListTitle>
-            <ListParagraph>
-              Azure <br/>
-              Python <br/>
-              ETL <br />
-              Dagster <br />
-              Pandas <br />
-              TimescaleDB <br />
-              Databricks<br/>
-            </ListParagraph>
-          </ListContainer>
-        </ListItem>
+        {skills.map((group, i) => {
+          const Icon = icons[i];
+          return (
+            <ListItem key={group.group}>
+              <Icon size="3rem" />
+              <ListContainer>
+                <ListTitle>
+                  {group.group}
+                </ListTitle>
+                <ListParagraph>
+                  {group.items.map((item) => (
+                    <React.Fragment key={item}>
+                      {item} <br />
+                    </React.Fragment>
+                  ))}
+                </ListParagraph>
+              </ListContainer>
+            </ListItem>
+          );
+        })}
       </List>
       </Section>
   </div>

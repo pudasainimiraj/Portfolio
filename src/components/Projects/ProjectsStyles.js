@@ -17,6 +17,7 @@ row-gap: 3rem;
 @media ${(props) => props.theme.breakpoints.sm} {
   display: flex;
   flex-direction: column;
+  align-items: stretch;
   padding: 2rem;
   padding-bottom: 0;
 }
@@ -86,14 +87,25 @@ export const Tag = styled.li`
 
 export const CardInfo = styled.p`
   color: #e4e6e7;
-  font-size: 1rem; // Adjust to match your design
-  line-height: 1.6; // Adjust to match your design
-  text-align: justify;
-  padding: 0 1rem; // Adjust padding to match your design
+  font-size: 1.5rem;
+  line-height: 1.6;
+  padding: 0 1rem;
 
   @media ${(props) => props.theme.breakpoints.sm} {
     padding: 0.5rem;
   }
+`;
+
+export const Metric = styled.p`
+  display: inline-block;
+  margin: 1.5rem 1rem 0;
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  background: ${(props) => props.theme.colors.background1};
+  color: ${(props) => props.theme.colors.accent1};
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
 `;
 
 export const TitleContent = styled.div`
@@ -169,7 +181,9 @@ transition: 0.5s;
 
 export const TagList = styled.ul`
 display: flex;
-justify-content: space-around;
+flex-wrap: wrap;
+justify-content: center;
+gap: 0.8rem 2rem;
 padding: 2rem;
 `
 // export const Tag = styled.li`

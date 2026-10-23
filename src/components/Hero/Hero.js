@@ -1,25 +1,25 @@
 import React from 'react';
 
-
 import { Section, SectionText, SectionTitle } from '../../styles/GlobalComponents';
-import Button from '../../styles/GlobalComponents/Button';
-import { LeftSection } from './HeroStyles';
+import { asset, hero, site } from '../../constants/constants';
+import { Actions, Availability, Headline, LeftSection, PrimaryLink, SecondaryLink } from './HeroStyles';
 
-
-const Hero = (props) => (
+const Hero = () => (
   <div>
-    <Section row nopadding >
+    <Section row nopadding>
       <LeftSection>
-        <SectionTitle main center>
-            Welcome to my Portfolio <br/>
+        <SectionTitle as="h1" main>
+          {site.name}
         </SectionTitle>
-        <SectionText>
-          I am a Software Engineer with a passion for learning new technologies and solving problems.
-          <br />
-          <t/>
-          Currently working at Zola Analytics building and continuously improving existing data pipeline and ingestion process. 
-        </SectionText>
-        <Button onClick={() => window.location = " "}>Learn More</Button>
+        <Availability>{site.availability}</Availability>
+        <Headline>{hero.headline}</Headline>
+        <SectionText>{hero.body}</SectionText>
+        <Actions>
+          <PrimaryLink href="#projects">View work</PrimaryLink>
+          <SecondaryLink href={asset(site.cv)} download>
+            Download CV
+          </SecondaryLink>
+        </Actions>
       </LeftSection>
     </Section>
   </div>

@@ -1,35 +1,29 @@
 import React from 'react';
-import { AiFillGithub, AiFillTwitterCircle, AiFillLinkedin } from 'react-icons/ai';
 
-import { SocialIcons } from '../Header/HeaderStyles';
-import { CompanyContainer, FooterWrapper, LinkColumn, LinkItem, LinkList, LinkTitle, Slogan, SocialContainer, SocialIconsContainer } from './FooterStyles';
+import { site } from '../../constants/constants';
+import { CompanyContainer, FooterWrapper, LinkColumn, LinkItem, LinkList, LinkTitle, Slogan, SocialIconsContainer } from './FooterStyles';
 
 const Footer = () => {
   return (
     <FooterWrapper>
       <LinkList>
         <LinkColumn>
-          <LinkTitle>Call</LinkTitle>
-          <LinkItem href="tel:+44 79194453">+44 7919445319</LinkItem>
+          <LinkTitle>Email</LinkTitle>
+          <LinkItem href={`mailto:${site.email}`}>{site.email}</LinkItem>
         </LinkColumn>
         <LinkColumn>
-          <LinkTitle>Email</LinkTitle>
-          <LinkItem href="mailto:pudasainimetal@gmail.com">Click to send an email</LinkItem>
+          <LinkTitle>LinkedIn</LinkTitle>
+          <LinkItem href={site.linkedin}>linkedin.com/in/miraj-pudasaini</LinkItem>
+        </LinkColumn>
+        <LinkColumn>
+          <LinkTitle>GitHub</LinkTitle>
+          <LinkItem href={site.github}>github.com/pudasainimiraj</LinkItem>
         </LinkColumn>
       </LinkList>
       <SocialIconsContainer>
         <CompanyContainer>
-          <Slogan>~This portfolio is powered with ReactJS</Slogan>
+          <Slogan>© {new Date().getFullYear()} {site.name}</Slogan>
         </CompanyContainer>
-        <SocialIcons href="https://github.com/KlokMiraj">
-          <AiFillGithub size="3rem" />
-        </SocialIcons>
-        <SocialIcons href="https://www.linkedin.com/in/miraj-pudasaini-77aa65153/">
-          <AiFillLinkedin size="3rem" />
-        </SocialIcons>
-        <SocialIcons href="https://twitter.com/dumbguynextdoor">
-          <AiFillTwitterCircle size="3rem"/>
-        </SocialIcons>
       </SocialIconsContainer>
     </FooterWrapper>
   );

@@ -1,55 +1,44 @@
 import Link from 'next/link';
 import React from 'react';
-import { AiFillGithub, AiFillTwitterCircle, AiFillLinkedin } from 'react-icons/ai';
-import { DiCssdeck } from 'react-icons/di';
+import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 
-import { Container, Div1, Div2, Div3, NavLink, SocialIcons, Span} from './HeaderStyles';
+import { asset, site } from '../../constants/constants';
+import { Container, Div1, Div2, Div3, NavLink, SocialIcons } from './HeaderStyles';
 
-const Header = () =>  (
+const Header = () => (
   <div>
-  <Container>
-    <Div1>
-      <Link href="/">
-        <a style={{ display: 'flex', alignItems: 'center', color:"white" , marginBottom:"20px"}}>
-          <DiCssdeck size="3rem" /> <span>MIRAJ.DEV.IO</span>
-        </a>
-      </Link>
-    </Div1>
-    <Div2>
-      <li>
-      <Link href="#projects">
-          <NavLink>Projects</NavLink>
+    <Container>
+      <Div1>
+        <Link href="/">
+          <a style={{ display: 'flex', alignItems: 'center', color: 'white', marginBottom: '20px' }}>
+            <span>{site.name}</span>
+          </a>
         </Link>
-      </li>
-      <li>
-        <Link href="#tech">
-          <NavLink>Skills</NavLink>
-        </Link>
-      </li>        
-      <li>
-        <Link href="#about">
-          <NavLink>About</NavLink>
-        </Link>
-      </li> 
-      {/* <li>
-        <Link href="/blog">
-          <NavLink>Blogs</NavLink>
-        </Link>
-      </li>        */}
-    </Div2>
+      </Div1>
+      <Div2>
+        <li>
+          <NavLink href="#projects">Projects</NavLink>
+        </li>
+        <li>
+          <NavLink href="#skills">Skills</NavLink>
+        </li>
+        <li>
+          <NavLink href="#experience">Experience</NavLink>
+        </li>
+        <li>
+          <NavLink href={asset(site.cv)}>CV</NavLink>
+        </li>
+      </Div2>
       <Div3>
-        <SocialIcons href="https://github.com/KlokMiraj">
+        <SocialIcons href={site.github} aria-label="GitHub">
           <AiFillGithub size="3rem" />
         </SocialIcons>
-        <SocialIcons href="https://www.linkedin.com/in/miraj-pudasaini-77aa65153/">
+        <SocialIcons href={site.linkedin} aria-label="LinkedIn">
           <AiFillLinkedin size="3rem" />
-        </SocialIcons>
-        <SocialIcons href="https://twitter.com/">
-          <AiFillTwitterCircle size="3rem"/>
         </SocialIcons>
       </Div3>
     </Container>
-    </div>
+  </div>
 );
 
 export default Header;
