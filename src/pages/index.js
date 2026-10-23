@@ -1,12 +1,11 @@
 import Head from 'next/head';
 
-import BgAnimation from '../components/BackgroundAnimation/BackgroundAnimation';
+import CtaBand from '../components/CtaBand/CtaBand';
 import Experience from '../components/Experience/Experience';
 import Hero from '../components/Hero/Hero';
 import Projects from '../components/Projects/Projects';
 import Technologies from '../components/Technologies/Technologies';
 import { Layout } from '../layout/Layout';
-import { Section } from '../styles/GlobalComponents';
 import { site } from '../constants/constants';
 
 
@@ -25,14 +24,12 @@ const Home = () => {
         <meta property="og:image" content={`${site.url}/og.png`} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <Section grid>
-        <Hero />
-        <BgAnimation />
-      </Section>
+      <Hero />
       <Projects />
       <Technologies />
       <Experience />
-      </Layout>
+      <CtaBand />
+    </Layout>
 
   );
 };

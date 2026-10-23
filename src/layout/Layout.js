@@ -2,14 +2,14 @@ import React from 'react'
 
 import Footer from '../components/Footer/Footer'
 import Header from '../components/Header/Header'
-import { Container } from './LayoutStyles'
+import { Main, Page } from './LayoutStyles'
 
 export const Layout = ({children}) => {
   return (
-    <Container>
+    <Page>
      <Header/>
-     <main>{children}</main> 
+     <Main>{children}</Main>
      <Footer/>
-    </Container>
+    </Page>
   )
 }

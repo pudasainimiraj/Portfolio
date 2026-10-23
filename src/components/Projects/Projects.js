@@ -1,46 +1,46 @@
 import React from 'react';
-import { BlogCard, CardInfo, ExternalLinks, GridContainer, HeaderThree, Hr, Metric, Tag, TagList, TitleContent, UtilityList } from './ProjectsStyles';
-import { Section, SectionDivider, SectionText, SectionTitle } from '../../styles/GlobalComponents';
-import { projects } from '../../constants/constants';
+import { FiArrowUpRight } from 'react-icons/fi';
 
+import { Card, CardTitle, Chip, ChipList, Container, Kicker, Section, SectionHeader, SectionText, SectionTitle, TextLink } from '../../styles/GlobalComponents';
+import { projects } from '../../constants/constants';
+import { Description, Grid, Links, Metric } from './ProjectsStyles';
 
 const Projects = () => (
-  <div>
-    <Section nopadding id='projects'>
-      <SectionDivider />
-      <SectionTitle>Projects</SectionTitle>
-      <SectionText>Each project states the problem, what I built and a measured result.</SectionText>
-
-        <GridContainer>
-        {projects.map((p) => {
-        return (
-          <BlogCard key={p.title}>
-            <TitleContent>
-              <HeaderThree title>{p.title}</HeaderThree>
-              <CardInfo>{p.tagline}</CardInfo>
-              <Hr />
-            </TitleContent>
-            <CardInfo className="card-info">{p.description}</CardInfo>
-            {p.metric && <Metric>{p.metric}</Metric>}
+  <Section id="projects">
+    <Container>
+      <SectionHeader>
+        <SectionTitle>Projects</SectionTitle>
+        <SectionText>Each project states the problem, what I built and a measured result.</SectionText>
+      </SectionHeader>
+      <Grid>
+        {projects.map((p) => (
+          <Card key={p.title}>
             <div>
-              <TitleContent>Stack</TitleContent>
-              <TagList>
-                {p.tags.map((t) => {
-                  return <Tag key={t}>{t}</Tag>;
-                })}
-              </TagList>
+              <CardTitle>{p.title}</CardTitle>
+              <Kicker>{p.tagline}</Kicker>
             </div>
-            <UtilityList>
-              <ExternalLinks href={p.code} target="_blank" rel="noopener noreferrer">Code</ExternalLinks>
-              {p.demo && <ExternalLinks href={p.demo} target="_blank" rel="noopener noreferrer">Live demo</ExternalLinks>}
-            </UtilityList>
-          </BlogCard>
-           );
-          })}
-      </GridContainer>
-
-    </Section>
-  </div>
+            <Description>{p.description}</Description>
+            {p.metric && <Metric>{p.metric}</Metric>}
+            <ChipList aria-label="Stack">
+              {p.tags.map((t) => (
+                <Chip key={t}>{t}</Chip>
+              ))}
+            </ChipList>
+            <Links>
+              <TextLink href={p.code} target="_blank" rel="noopener noreferrer">
+                Code <FiArrowUpRight size={16} />
+              </TextLink>
+              {p.demo && (
+                <TextLink href={p.demo} target="_blank" rel="noopener noreferrer">
+                  Live demo <FiArrowUpRight size={16} />
+                </TextLink>
+              )}
+            </Links>
+          </Card>
+        ))}
+      </Grid>
+    </Container>
+  </Section>
 );
 
 export default Projects;

@@ -10,7 +10,7 @@ export const site = {
   name: 'Miraj Pudasaini',
   location: 'London',
   url: 'https://pudasainimiraj.github.io/Portfolio',
-  title: 'Miraj Pudasaini – AI engineer in London',
+  title: 'Miraj Pudasaini | AI engineer in London',
   description:
     'AI engineer in London. RAG agents and hybrid search over financial time series, and the data pipelines that feed them. Projects with measured results, experience and CV.',
   email: 'pudasainimiraj@outlook.com',
@@ -27,6 +27,30 @@ export const hero = {
     'AI engineer in London. I build RAG agents and hybrid search over financial time series, and the data pipelines that feed them.',
   body:
     'At I Tech Care I run the Airflow and Databricks pipelines that load market data into Azure, and I have shipped vertical AI agents that answer questions over EODHD tickers and a BM25 and embedding search across millions of financial series. Before that I spent two years at Zola Analytics building its macro data platform and an agentic RAG that creates charts from it.',
+};
+
+// Three real figures from the CV, shown under the hero. Each links to where it is explained.
+export const proof = [
+  {
+    value: '0.65',
+    label: 'Hit@3 on ContextTrace’s frozen 25-question evaluation set',
+    href: '#projects',
+  },
+  {
+    value: '40%',
+    label: 'data-team productivity gain from the infrastructure I deployed at I Tech Care',
+    href: '#experience',
+  },
+  {
+    value: '60%',
+    label: 'higher ingestion frequency after replacing Excel pipelines at Zola Analytics',
+    href: '#experience',
+  },
+];
+
+export const cta = {
+  line: 'Hiring an AI engineer who ships retrieval systems with evals, and the pipelines behind them?',
+  button: 'Email me',
 };
 
 export const projects = [
@@ -121,10 +145,16 @@ export const skills = [
     group: 'AI and ML',
     items: [
       'RAG agents',
-      'Hybrid search (BM25 and embeddings)',
-      'Embeddings (Titan, Workers AI)',
+      'Hybrid search',
+      'BM25',
+      'Embeddings',
+      'Titan',
+      'Workers AI',
       'pgvector',
-      'Retrieval evaluation (nDCG@10, P@12, Hit@k, MRR)',
+      'Retrieval evals',
+      'nDCG@10',
+      'Hit@k',
+      'MRR',
       'LLM APIs',
     ],
   },

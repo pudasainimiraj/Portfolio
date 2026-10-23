@@ -1,42 +1,60 @@
 import React from 'react';
 
-import { Section, SectionDivider, SectionText, SectionTitle } from '../../styles/GlobalComponents';
+import { Chip, ChipList, Container, Section, SectionHeader, SectionText, SectionTitle } from '../../styles/GlobalComponents';
 import { education, experience } from '../../constants/constants';
-import { Bullets, EduList, Role, RoleCompany, RoleHeader, RoleList, RolePeriod, RoleTitle, StackLine, SubTitle } from './ExperienceStyles';
+import { Bullets, Company, Meta, Period, Role, RoleList, RoleTitle, StackRow, SubTitle } from './ExperienceStyles';
 
 const Experience = () => (
   <Section id="experience">
-    <SectionDivider />
-    <SectionTitle>Experience</SectionTitle>
-    <SectionText>What I did in each role, with the outcome.</SectionText>
+    <Container>
+      <SectionHeader>
+        <SectionTitle>Experience</SectionTitle>
+        <SectionText>What I did in each role, with the outcome.</SectionText>
+      </SectionHeader>
 
-    <RoleList>
-      {experience.map((role) => (
-        <Role key={`${role.title}-${role.company}`}>
-          <RoleHeader>
-            <RoleTitle>
-              {role.title} <RoleCompany>· {role.company}</RoleCompany>
-            </RoleTitle>
-            <RolePeriod>{role.period}</RolePeriod>
-          </RoleHeader>
-          <Bullets>
-            {role.bullets.map((bullet) => (
-              <li key={bullet}>{bullet}</li>
-            ))}
-          </Bullets>
-          {role.stack.length > 0 && <StackLine>{role.stack.join(' · ')}</StackLine>}
-        </Role>
-      ))}
-    </RoleList>
+      <RoleList>
+        {experience.map((role) => (
+          <Role key={`${role.title}-${role.company}`}>
+            <Meta>
+              <RoleTitle>{role.title}</RoleTitle>
+              <Company>{role.company}</Company>
+              <Period>{role.period}</Period>
+            </Meta>
+            <div>
+              <Bullets>
+                {role.bullets.map((bullet) => (
+                  <li key={bullet}>{bullet}</li>
+                ))}
+              </Bullets>
+              {role.stack.length > 0 && (
+                <StackRow>
+                  <ChipList aria-label="Stack">
+                    {role.stack.map((item) => (
+                      <Chip key={item}>{item}</Chip>
+                    ))}
+                  </ChipList>
+                </StackRow>
+              )}
+            </div>
+          </Role>
+        ))}
+      </RoleList>
 
-    <SubTitle>Education</SubTitle>
-    <EduList>
-      {education.map((entry) => (
-        <li key={entry.degree}>
-          {entry.degree}, {entry.school}, {entry.period}
-        </li>
-      ))}
-    </EduList>
+      <SubTitle>Education</SubTitle>
+      <RoleList>
+        {education.map((entry) => (
+          <Role key={entry.degree}>
+            <Meta>
+              <Period>{entry.period}</Period>
+            </Meta>
+            <Meta>
+              <RoleTitle>{entry.degree}</RoleTitle>
+              <Company>{entry.school}</Company>
+            </Meta>
+          </Role>
+        ))}
+      </RoleList>
+    </Container>
   </Section>
 );
 
