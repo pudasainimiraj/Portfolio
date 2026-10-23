@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>Miraj Pudasaini CV</title>
+<style>
+  @page { size: A4; margin: 15mm 17mm 16mm; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #fff; }
+  body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 10pt;
+    line-height: 1.38;
+    color: #1a1a1a;
+    width: 176mm;
+    margin: 0 auto;
+  }
+  header { text-align: center; margin-bottom: 7mm; }
+  h1 { font-size: 24pt; font-weight: 700; letter-spacing: -0.01em; line-height: 1.1; }
+  .headline { font-size: 12pt; font-weight: 700; margin-top: 1.5mm; }
+  .contact { font-size: 9.2pt; color: #333; margin-top: 2mm; }
+  .contact a { color: #333; text-decoration: none; }
+  .contact span + span::before { content: "  ·  "; color: #888; }
+  h2 {
+    font-size: 12.5pt;
+    font-weight: 700;
+    margin: 6mm 0 2.5mm;
+    padding-bottom: 1.2mm;
+    border-bottom: 1px solid #1a1a1a;
+  }
+  h2:first-of-type { margin-top: 0; }
+  .role { margin-bottom: 4.2mm; }
+  .role-line { display: flex; justify-content: space-between; align-items: baseline; gap: 6mm; break-after: avoid; }
+  .org, .project-meta { break-after: avoid; }
+  li { break-inside: avoid; }
+  .role-title { font-weight: 700; font-size: 10.5pt; }
+  .role-title .stack { font-weight: 400; color: #333; }
+  .dates { white-space: nowrap; font-size: 9.5pt; color: #333; }
+  .org { font-size: 9.8pt; color: #333; margin: 0.4mm 0 1.4mm; }
+  ul { padding-left: 4.5mm; }
+  li { margin-bottom: 0.9mm; padding-left: 0.8mm; }
+  .project-line { font-weight: 700; font-size: 10.5pt; }
+  .project-meta { font-size: 9.8pt; color: #333; margin: 0.4mm 0 1.4mm; }
+  .edu { margin-bottom: 3.2mm; break-inside: avoid; }
+  .edu .role-title { font-size: 10.5pt; }
+  .edu .award { font-weight: 400; font-style: italic; color: #333; }
+  .degree { font-size: 9.8pt; margin-top: 0.4mm; }
+  .degree b { font-weight: 700; }
+  .page-break { break-before: page; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Miraj Pudasaini</h1>
+  <p class="headline">AI Engineer</p>
+  <p class="contact">
+    <span>London, England [SE2 0PA]</span>
+    <span>07919445314</span>
+    <span><a href="mailto:pudasainimiraj@outlook.com">pudasainimiraj@outlook.com</a></span>
+  </p>
+  <p class="contact">
+    <span><a href="https://pudasainimiraj.github.io/Portfolio/">pudasainimiraj.github.io/Portfolio</a></span>
+    <span><a href="https://github.com/pudasainimiraj">github.com/pudasainimiraj</a></span>
+    <span><a href="https://www.linkedin.com/in/miraj-pudasaini-77aa65153/">linkedin.com/in/miraj-pudasaini-77aa65153</a></span>
+  </p>
+</header>
+
+<h2>Work Experience</h2>
+
+<div class="role">
+  <div class="role-line">
+    <p class="role-title">Forward Deployed Full-stack Engineer <span class="stack">(Airflow, Python, SQL, ETL, Databricks, Azure)</span></p>
+    <p class="dates">June 2025 – Present</p>
+  </div>
+  <p class="org">I Tech Care LTD | London</p>
+  <ul>
+    <li>Design and build high-performance data pipelines utilizing Databricks and Apache Spark connectors in Airflow to extract, transform and load prices and market tickers from well-known stock exchanges into Azure Data Lake Storage and related Azure services.</li>
+    <li>Develop and maintain secure data warehouses and lakehouses through robust data models, comprehensive quality checks and stringent governance practices.</li>
+    <li>Designed and deployed data infrastructure that improved the productivity of the data team by 40% by aiding collaboration on data quality analysis and data ingestion.</li>
+    <li>Designed and deployed numerous vertical AI agents performing RAG on EODHD time-series tickers to automate financial market data analysis.</li>
+    <li>Spearheaded the implementation of a hybrid BM25 and Titan-embedding search over millions of financial series, gated by nDCG@10 and P@12.</li>
+    <li>Facilitated automated reporting of data and data-process health to detect failures and anomalies before they occur, saving client resources.</li>
+  </ul>
+</div>
+
+<div class="role">
+  <div class="role-line">
+    <p class="role-title">Data Engineer <span class="stack">(Dagster, Snowflake, Excel, Python, SQL, AWS)</span></p>
+    <p class="dates">Feb 2023 – May 2025</p>
+  </div>
+  <p class="org">Zola Analytics | London</p>
+  <ul>
+    <li>Engineered an ETL data pipeline, replacing Excel workflows with a modern tech and data stack of Dagster and custom Python/Pandas solutions, increasing ingestion frequency by 60% while improving monitoring and alerting to improve the organisational data process by 80%.</li>
+    <li>Optimised Zola's data platform, built in Python, SQLAlchemy, Neo4j and TimescaleDB, to improve security and cut transaction time by 70%, and saved on the monthly AWS storage bill by applying best database design patterns.</li>
+    <li>Saved company resources multiple times by triaging AWS compute and detecting anomalies in cloud infrastructure and serverless architecture, accurately diagnosing memory leaks in the system and deploying quick fixes.</li>
+    <li>Designed and implemented bespoke API clients to orchestrate the migration of huge databases such as OECD, IMF, BIS and FRED, and dimension-modelled the time-series data to fit the Zola data platform.</li>
+    <li>Collaborated with the machine learning and AI team to design and deploy an agentic large language model that performs RAG on macro time-series data to automate chart creation.</li>
+  </ul>
+</div>
+
+<div class="role">
+  <div class="role-line">
+    <p class="role-title">Full-stack Software Engineer</p>
+    <p class="dates">April 2019 – June 2020</p>
+  </div>
+  <p class="org">Green Codes | Kathmandu, Nepal</p>
+  <ul>
+    <li>Instrumental in modernising a legacy Java-based internal CRM application to Node.js, React and Next.js, eliminating bottlenecks and latency in API responses and making the company CRM and dev tools 12% faster.</li>
+    <li>Collaborated as part of a customer-centric agile team to develop and maintain RESTful APIs written in Spring Boot and deployed on AWS.</li>
+    <li>Spearheaded the implementation of an AWS DevOps pipeline to switch to serverless, cutting the company's CI/CD operating cost by 20%.</li>
+    <li>Improved SQL queries so that the user retrieval process consumed 20% less database resources.</li>
+  </ul>
+</div>
+
+<h2>Projects</h2>
+
+<div class="role">
+  <div class="role-line">
+    <p class="project-line">ContextTrace <span class="stack" style="font-weight:400;color:#333">(<a href="https://pudasainimiraj.github.io/ContextTrace/" style="color:#333;text-decoration:none">pudasainimiraj.github.io/ContextTrace</a>)</span></p>
+    <p class="dates">Solo, Oct 2026</p>
+  </div>
+  <p class="project-meta">Semantic search over GitHub discussions · TypeScript, React, Cloudflare Workers, Workers AI, Supabase pgvector</p>
+  <ul>
+    <li>Built a retrieval service that answers questions about a repository with passages linked to the source issue or PR comment.</li>
+    <li>Designed an incremental, idempotent ETL on Cloudflare Queues with deterministic passage ids and content hashes.</li>
+    <li>Ran the service entirely on free tiers with budget ledgers, job leases and retries; cut transform CPU 4 to 6x.</li>
+    <li>Measured quality on a frozen 25-question set: Hit@3 0.65, thread Hit@5 0.95; the keyword baseline scored 0.05.</li>
+  </ul>
+</div>
+
+<h2>Education</h2>
+
+<div class="edu">
+  <div class="role-line">
+    <p class="role-title">York St John University <span class="award">(awarded Upper Second Class, 69.6%)</span></p>
+    <p class="dates">Feb 2021 – Feb 2023</p>
+  </div>
+  <p class="org">London, United Kingdom</p>
+  <p class="degree"><b>Master of Science</b> | Computer Science</p>
+</div>
+
+<div class="edu">
+  <div class="role-line">
+    <p class="role-title">University of Wolverhampton <span class="award">(awarded First Class with Honours, 75.8%)</span></p>
+    <p class="dates">Sept 2017 – July 2020</p>
+  </div>
+  <p class="org">Herald College Kathmandu · Kathmandu, Nepal</p>
+  <p class="degree"><b>Bachelor of Science (Hons)</b> | Computer Science</p>
+</div>
+</body>
+</html>
