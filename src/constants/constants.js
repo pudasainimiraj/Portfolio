@@ -91,7 +91,7 @@ export const projects = [
 
 export const experience = [
   {
-    title: 'Senior Data Engineer',
+    title: 'Forward Deployed Full-stack Engineer',
     company: 'I Tech Care',
     period: 'June 2025 – present',
     stack: ['Airflow', 'Python', 'SQL', 'Databricks', 'Spark', 'Azure'],
