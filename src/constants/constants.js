@@ -1,5 +1,5 @@
 // All the text a visitor reads comes from this file.
-// Lines marked TODO need Miraj's input before `npm run deploy`.
+// Facts come from Miraj's CV (October 2026). Lines marked TODO still need input.
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
@@ -12,33 +12,32 @@ export const site = {
   url: 'https://pudasainimiraj.github.io/Portfolio',
   title: 'Miraj Pudasaini – AI engineer in London',
   description:
-    'AI engineer in London building retrieval systems and production data pipelines. Projects with measured results, experience and CV.',
-  email: 'pudasainimetal@gmail.com',
+    'AI engineer in London. RAG agents and hybrid search over financial time series, and the data pipelines that feed them. Projects with measured results, experience and CV.',
+  email: 'pudasainimiraj@outlook.com',
   github: 'https://github.com/pudasainimiraj',
   linkedin: 'https://www.linkedin.com/in/miraj-pudasaini-77aa65153/',
-  // TODO: add the PDF at public/Miraj-Pudasaini-CV.pdf. The header and hero link to it.
+  // The PDF lives at public/Miraj-Pudasaini-CV.pdf.
   cv: '/Miraj-Pudasaini-CV.pdf',
   availability: 'Open to AI engineer roles',
 };
 
 export const hero = {
-  // TODO: confirm the positioning line. Pattern: "AI engineer in London. I build [what] for [whom]."
+  // Confirm this wording. Pattern: "AI engineer in London. I build [what] for [whom]."
   headline:
-    'AI engineer in London. I build retrieval systems and production data pipelines for teams that need answers from their own data.',
-  // TODO: replace [number] with a real figure from work.
+    'AI engineer in London. I build RAG agents and hybrid search over financial time series, and the data pipelines that feed them.',
   body:
-    'At Zola Analytics I build and run the ingestion pipelines that feed [number] datasets into the product, and I keep them running. Next I want an AI engineer role where retrieval, evaluation and reliable data pipelines matter.',
+    'At I Tech Care I run the Airflow and Databricks pipelines that load market data into Azure, and I have shipped vertical AI agents that answer questions over EODHD tickers and a BM25 and embedding search across millions of financial series. Before that I spent two years at Zola Analytics building its macro data platform and an agentic RAG that creates charts from it.',
 };
 
 export const projects = [
   {
     title: 'ContextTrace',
-    tagline: 'Search the discussions behind a codebase',
+    tagline: 'Semantic search over GitHub discussions',
     description:
-      'Indexes the issues, pull requests and comments of a public GitHub repository, chunks them with the embedding model’s own tokenizer, embeds them with Workers AI and answers questions with a hybrid semantic-and-keyword search over pgvector. Every result carries a permalink to the comment it came from.',
+      'A retrieval service that answers questions about a repository with passages linked to the source issue or pull request comment. An incremental, idempotent ETL on Cloudflare Queues with deterministic passage ids and content hashes feeds Workers AI embeddings into Supabase pgvector. The whole service runs on free tiers with budget ledgers, job leases and retries, and a 4 to 6x cut in transform CPU.',
     // Measured on 2026-10-15 against the live service; see docs/EVALUATION.md in the repo.
-    metric: 'Hit@3 0.65 and MRR@5 0.55 on a frozen 25-question set',
-    tags: ['TypeScript', 'Cloudflare Workers', 'Supabase', 'pgvector', 'Workers AI', 'React'],
+    metric: 'Hit@3 0.65 and thread Hit@5 0.95 on a frozen 25-question set; keyword baseline 0.05',
+    tags: ['TypeScript', 'React', 'Cloudflare Workers', 'Workers AI', 'Supabase', 'pgvector'],
     code: 'https://github.com/pudasainimiraj/ContextTrace',
     demo: 'https://pudasainimiraj.github.io/ContextTrace/',
   },
@@ -68,51 +67,73 @@ export const projects = [
 
 export const experience = [
   {
-    // TODO: confirm the title.
-    title: 'Data Engineer',
-    company: 'Zola Analytics',
-    period: '2023 – present',
-    stack: ['Python', 'Dagster', 'PostgreSQL', 'TimescaleDB', 'Databricks', 'Azure'],
-    // TODO: replace each [ ] with a real outcome and number.
+    title: 'Senior Data Engineer',
+    company: 'I Tech Care',
+    period: 'June 2025 – present',
+    stack: ['Airflow', 'Python', 'SQL', 'Databricks', 'Spark', 'Azure'],
     bullets: [
-      'Build and run the Dagster ingestion pipelines that load [number] datasets and [number] series into TimescaleDB.',
-      'Cut [a pipeline step] from [before] to [after] by [what changed].',
-      'Added data-quality checks that catch [number] issues a month before they reach the product.',
+      'Design and run Airflow pipelines with Databricks and Spark connectors that load prices and market tickers from major stock exchanges into Azure Data Lake Storage.',
+      'Built vertical AI agents that run RAG over EODHD time-series tickers to automate financial market analysis.',
+      'Led a hybrid BM25 and Titan-embedding search over millions of financial series, gated on nDCG@10 and P@12.',
+      'Deployed data infrastructure for quality analysis and ingestion that raised the data team’s productivity by 40%.',
     ],
   },
   {
-    title: 'Junior Software Engineer',
-    // TODO: company name and dates.
-    company: '[Company]',
-    period: '2019 – 2020',
-    stack: [],
-    bullets: ['[One or two bullets with an outcome and a number.]'],
+    title: 'Data Engineer',
+    company: 'Zola Analytics',
+    period: 'Feb 2023 – May 2025',
+    stack: ['Dagster', 'Python', 'Pandas', 'SQL', 'TimescaleDB', 'Neo4j', 'Snowflake', 'AWS'],
+    bullets: [
+      'Replaced Excel workflows with Dagster and Python pipelines, raising ingestion frequency by 60% and improving monitoring and alerting across the data process by 80%.',
+      'Built API clients that migrated the OECD, IMF, BIS and FRED databases into a dimensional time-series model on the Zola data platform.',
+      'Optimised the Python, SQLAlchemy, Neo4j and TimescaleDB platform, cutting transaction time by 70% and the monthly AWS storage bill.',
+      'Worked with the ML and AI team to design and deploy an agentic LLM that runs RAG over macro time series to create charts automatically.',
+    ],
+  },
+  {
+    title: 'Full-stack Software Engineer',
+    company: 'Green Codes',
+    period: 'April 2019 – June 2020',
+    stack: ['Java', 'Spring Boot', 'Node.js', 'React', 'Next.js', 'AWS'],
+    bullets: [
+      'Modernised a legacy Java CRM to Node.js, React and Next.js, making the CRM and dev tools 12% faster.',
+      'Moved the AWS CI/CD pipeline to serverless, cutting its operating cost by 20%.',
+      'Tuned SQL queries so user retrieval used 20% less database resources.',
+    ],
   },
 ];
 
 export const education = [
-  // TODO: subject and university.
-  { degree: 'MSc [Subject]', school: '[University]', period: '2021 – 2022' },
-  { degree: 'BSc [Subject]', school: '[University]', period: '[Start] – 2020' },
+  {
+    degree: 'MSc Computer Science (Upper Second Class)',
+    school: 'York St John University, London',
+    period: '2021 – 2023',
+  },
+  {
+    degree: 'BSc (Hons) Computer Science (First Class)',
+    school: 'University of Wolverhampton at Herald College, Kathmandu',
+    period: '2017 – 2020',
+  },
 ];
 
 export const skills = [
   {
     group: 'AI and ML',
-    // TODO: keep only what you can defend in an interview.
     items: [
-      'RAG and hybrid search',
-      'Embeddings and pgvector',
-      'Retrieval evaluation (Recall@k, MRR)',
+      'RAG agents',
+      'Hybrid search (BM25 and embeddings)',
+      'Embeddings (Titan, Workers AI)',
+      'pgvector',
+      'Retrieval evaluation (nDCG@10, P@12, Hit@k, MRR)',
       'LLM APIs',
     ],
   },
   {
     group: 'Data',
-    items: ['Python', 'SQL', 'Dagster', 'Airflow', 'PostgreSQL', 'TimescaleDB', 'Databricks', 'Azure', 'Pandas'],
+    items: ['Python', 'SQL', 'Airflow', 'Dagster', 'Databricks', 'Spark', 'Azure', 'AWS', 'Snowflake', 'PostgreSQL', 'TimescaleDB', 'Neo4j'],
   },
   {
     group: 'Software',
-    items: ['TypeScript', 'React', 'Next.js', 'Node.js', 'Docker', 'Cloudflare Workers', 'Supabase', 'pytest'],
+    items: ['TypeScript', 'React', 'Next.js', 'Node.js', 'Java', 'Spring Boot', 'Docker', 'Cloudflare Workers', 'Supabase', 'Serverless CI/CD'],
   },
 ];
