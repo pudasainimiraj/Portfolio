@@ -1,38 +1,33 @@
 import React from 'react';
-import { AiFillGithub, AiFillTwitterCircle, AiFillLinkedin } from 'react-icons/ai';
 
-import { SocialIcons } from '../Header/HeaderStyles';
-import { CompanyContainer, FooterWrapper, LinkColumn, LinkItem, LinkList, LinkTitle, Slogan, SocialContainer, SocialIconsContainer } from './FooterStyles';
+import { Container } from '../../styles/GlobalComponents';
+import { asset, site } from '../../constants/constants';
+import { Bottom, Column, ColumnTitle, FooterGrid, FooterLink, FooterWrap } from './FooterStyles';
 
-const Footer = () => {
-  return (
-    <FooterWrapper>
-      <LinkList>
-        <LinkColumn>
-          <LinkTitle>Call</LinkTitle>
-          <LinkItem href="tel:+44 79194453">+44 7919445319</LinkItem>
-        </LinkColumn>
-        <LinkColumn>
-          <LinkTitle>Email</LinkTitle>
-          <LinkItem href="mailto:pudasainimetal@gmail.com">Click to send an email</LinkItem>
-        </LinkColumn>
-      </LinkList>
-      <SocialIconsContainer>
-        <CompanyContainer>
-          <Slogan>~This portfolio is powered with ReactJS</Slogan>
-        </CompanyContainer>
-        <SocialIcons href="https://github.com/KlokMiraj">
-          <AiFillGithub size="3rem" />
-        </SocialIcons>
-        <SocialIcons href="https://www.linkedin.com/in/miraj-pudasaini-77aa65153/">
-          <AiFillLinkedin size="3rem" />
-        </SocialIcons>
-        <SocialIcons href="https://twitter.com/dumbguynextdoor">
-          <AiFillTwitterCircle size="3rem"/>
-        </SocialIcons>
-      </SocialIconsContainer>
-    </FooterWrapper>
-  );
-};
+const Footer = () => (
+  <FooterWrap>
+    <Container>
+      <FooterGrid>
+        <Column>
+          <ColumnTitle>Contact</ColumnTitle>
+          <FooterLink href={`mailto:${site.email}`}>{site.email}</FooterLink>
+          <FooterLink href={asset(site.cv)}>Download CV</FooterLink>
+        </Column>
+        <Column>
+          <ColumnTitle>Profiles</ColumnTitle>
+          <FooterLink href={site.github} target="_blank" rel="noopener noreferrer">GitHub</FooterLink>
+          <FooterLink href={site.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</FooterLink>
+        </Column>
+        <Column>
+          <ColumnTitle>On this page</ColumnTitle>
+          <FooterLink href="#projects">Projects</FooterLink>
+          <FooterLink href="#skills">Skills</FooterLink>
+          <FooterLink href="#experience">Experience</FooterLink>
+        </Column>
+      </FooterGrid>
+      <Bottom>© {new Date().getFullYear()} {site.name}</Bottom>
+    </Container>
+  </FooterWrap>
+);
 
 export default Footer;

@@ -1,55 +1,44 @@
 import Link from 'next/link';
-import React from 'react';
-import { AiFillGithub, AiFillTwitterCircle, AiFillLinkedin } from 'react-icons/ai';
-import { DiCssdeck } from 'react-icons/di';
+import React, { useEffect, useState } from 'react';
+import { FiGithub, FiLinkedin } from 'react-icons/fi';
 
-import { Container, Div1, Div2, Div3, NavLink, SocialIcons, Span} from './HeaderStyles';
+import { asset, site } from '../../constants/constants';
+import { Actions, Bar, Brand, CvLink, IconLink, Inner, Nav, NavLink } from './HeaderStyles';
 
-const Header = () =>  (
-  <div>
-  <Container>
-    <Div1>
-      <Link href="/">
-        <a style={{ display: 'flex', alignItems: 'center', color:"white" , marginBottom:"20px"}}>
-          <DiCssdeck size="3rem" /> <span>MIRAJ.DEV.IO</span>
-        </a>
-      </Link>
-    </Div1>
-    <Div2>
-      <li>
-      <Link href="#projects">
-          <NavLink>Projects</NavLink>
+const Header = () => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  return (
+    <Bar $scrolled={scrolled}>
+      <Inner>
+        <Link href="/" passHref>
+          <Brand>{site.name}</Brand>
         </Link>
-      </li>
-      <li>
-        <Link href="#tech">
-          <NavLink>Skills</NavLink>
-        </Link>
-      </li>        
-      <li>
-        <Link href="#about">
-          <NavLink>About</NavLink>
-        </Link>
-      </li> 
-      {/* <li>
-        <Link href="/blog">
-          <NavLink>Blogs</NavLink>
-        </Link>
-      </li>        */}
-    </Div2>
-      <Div3>
-        <SocialIcons href="https://github.com/KlokMiraj">
-          <AiFillGithub size="3rem" />
-        </SocialIcons>
-        <SocialIcons href="https://www.linkedin.com/in/miraj-pudasaini-77aa65153/">
-          <AiFillLinkedin size="3rem" />
-        </SocialIcons>
-        <SocialIcons href="https://twitter.com/">
-          <AiFillTwitterCircle size="3rem"/>
-        </SocialIcons>
-      </Div3>
-    </Container>
-    </div>
-);
+        <Nav aria-label="Sections">
+          <NavLink href="#projects">Projects</NavLink>
+          <NavLink href="#skills">Skills</NavLink>
+          <NavLink href="#experience">Experience</NavLink>
+          <NavLink href="#contact">Contact</NavLink>
+        </Nav>
+        <Actions>
+          <IconLink href={site.github} aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+            <FiGithub size={22} />
+          </IconLink>
+          <IconLink href={site.linkedin} aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+            <FiLinkedin size={22} />
+          </IconLink>
+          <CvLink href={asset(site.cv)}>CV</CvLink>
+        </Actions>
+      </Inner>
+    </Bar>
+  );
+};
 
 export default Header;
