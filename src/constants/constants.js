@@ -26,27 +26,20 @@ export const hero = {
   headline:
     'AI engineer in London. I build RAG agents and hybrid search over financial time series, and the data pipelines that feed them.',
   body:
-    'At I Tech Care I run the Airflow and Databricks pipelines that load market data into Azure, and I have shipped vertical AI agents that answer questions over EODHD tickers and a BM25 and embedding search across millions of financial series. Before that I spent two years at Zola Analytics building its macro data platform and an agentic RAG that creates charts from it.',
+    'At I Tech Care I run the Airflow and Databricks pipelines that load market data into Azure, and I ship RAG agents over EODHD tickers and a BM25 and embedding search across millions of series. Before that, two years building Zola Analytics’ macro data platform.',
 };
 
-// Three real figures from the CV, shown under the hero. Each links to where it is explained.
-export const proof = [
-  {
-    value: '0.65',
-    label: 'Hit@3 on ContextTrace’s frozen 25-question evaluation set',
-    href: '#projects',
-  },
-  {
-    value: '40%',
-    label: 'data-team productivity gain from the infrastructure I deployed at I Tech Care',
-    href: '#experience',
-  },
-  {
-    value: '60%',
-    label: 'higher ingestion frequency after replacing Excel pipelines at Zola Analytics',
-    href: '#experience',
-  },
-];
+// The live search in the hero calls ContextTrace, my retrieval service over GitHub discussions.
+export const live = {
+  api: 'https://contexttrace.contexttrace.workers.dev',
+  demo: 'https://pudasainimiraj.github.io/ContextTrace',
+  // The no-script form submits to this repository's page on the demo. With script, the list comes from the API.
+  fallbackRepo: 'openclaw/openclaw',
+  placeholder: 'Why does the queue stop after one task fails?',
+  caption:
+    'ContextTrace is my retrieval service over GitHub issues and pull requests. Hit@3 0.65 and thread Hit@5 0.95 on a frozen 25-question set; the keyword baseline scores 0.05.',
+  evaluation: 'https://github.com/pudasainimiraj/ContextTrace/blob/main/docs/EVALUATION.md',
+};
 
 export const cta = {
   line: 'Hiring an AI engineer who ships retrieval systems with evals, and the pipelines behind them?',

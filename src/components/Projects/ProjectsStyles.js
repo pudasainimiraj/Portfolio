@@ -26,12 +26,10 @@ export const Description = styled.p`
 `;
 
 export const Metric = styled.p`
-  padding: 12px 14px;
+  padding: 12px 16px;
   border-radius: 10px;
-  background: rgba(254, 197, 118, 0.08);
-  border: 1px solid rgba(254, 197, 118, 0.25);
-  font-family: ${(props) => props.theme.fonts.mono};
-  font-size: 14px;
+  background: rgba(254, 197, 118, 0.1);
+  font-size: 16px;
   line-height: 1.5;
   color: ${(props) => props.theme.colors.accent1};
 `;

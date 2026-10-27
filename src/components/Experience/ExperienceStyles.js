@@ -3,23 +3,21 @@ import styled from 'styled-components';
 export const RoleList = styled.ol`
   display: flex;
   flex-direction: column;
+  gap: 56px;
+
+  @media ${(props) => props.theme.breakpoints.md} {
+    gap: 40px;
+  }
 `;
 
 export const Role = styled.li`
   display: grid;
   grid-template-columns: 260px minmax(0, 1fr);
   gap: 24px 48px;
-  padding: 40px 0;
-  border-top: 1px solid ${(props) => props.theme.colors.border};
-
-  &:last-child {
-    border-bottom: 1px solid ${(props) => props.theme.colors.border};
-  }
 
   @media ${(props) => props.theme.breakpoints.md} {
     grid-template-columns: 1fr;
     gap: 16px;
-    padding: 32px 0;
   }
 `;
 
@@ -30,7 +28,7 @@ export const Meta = styled.div`
 `;
 
 export const RoleTitle = styled.h3`
-  font-size: 22px;
+  font-size: 24px;
   line-height: 1.3;
   font-weight: 700;
   color: #fff;
@@ -43,7 +41,6 @@ export const Company = styled.p`
 `;
 
 export const Period = styled.p`
-  font-family: ${(props) => props.theme.fonts.mono};
   font-size: 14px;
   color: ${(props) => props.theme.colors.textSubtle};
 `;
@@ -84,16 +81,15 @@ export const StackRow = styled.div`
 `;
 
 export const SubTitle = styled.h3`
-  margin-top: 56px;
-  margin-bottom: 8px;
-  font-size: 30px;
+  margin: 88px 0 32px;
+  font-size: 36px;
   line-height: 1.2;
   font-weight: 700;
   letter-spacing: -0.02em;
   color: #fff;
 
   @media ${(props) => props.theme.breakpoints.md} {
-    margin-top: 40px;
-    font-size: 24px;
+    margin: 80px 0 24px;
+    font-size: 28px;
   }
 `;

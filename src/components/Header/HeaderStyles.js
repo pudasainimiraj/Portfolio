@@ -7,12 +7,10 @@ export const Bar = styled.header`
   right: 0;
   z-index: 10;
   height: ${(props) => props.theme.header.desktop};
-  background: rgba(15, 22, 36, 0.8);
+  background: ${({ $scrolled }) => ($scrolled ? 'rgba(15, 22, 36, 0.92)' : 'rgba(15, 22, 36, 0.6)')};
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid ${({ $scrolled }) => ($scrolled ? 'rgba(255, 255, 255, 0.12)' : 'rgba(255, 255, 255, 0.06)')};
-  box-shadow: ${({ $scrolled }) => ($scrolled ? '0 8px 32px rgba(0, 0, 0, 0.35)' : 'none')};
-  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+  transition: background 0.2s ease;
 
   @media ${(props) => props.theme.breakpoints.md} {
     height: ${(props) => props.theme.header.mobile};
@@ -103,17 +101,16 @@ export const CvLink = styled.a`
   margin-left: 8px;
   padding: 0 18px;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.08);
   font-family: ${(props) => props.theme.fonts.title};
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
   color: #fff;
   white-space: nowrap;
-  transition: border-color 0.2s ease, background 0.2s ease;
+  transition: background 0.2s ease;
 
   &:hover {
-    border-color: #fff;
-    background: rgba(255, 255, 255, 0.06);
+    background: rgba(255, 255, 255, 0.14);
   }
 
   @media ${(props) => props.theme.breakpoints.sm} {

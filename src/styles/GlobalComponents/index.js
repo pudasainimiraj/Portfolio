@@ -68,30 +68,11 @@ export const Card = styled.div`
   height: 100%;
   padding: 32px;
   background: ${(props) => props.theme.colors.surface};
-  border: 1px solid ${(props) => props.theme.colors.border};
   border-radius: 16px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-
-  &:hover {
-    transform: translateY(-4px);
-    border-color: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 18px 42px -14px rgba(0, 0, 0, 0.6);
-  }
 
   @media ${(props) => props.theme.breakpoints.sm} {
     padding: 24px;
   }
-`;
-
-export const IconTile = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
-  background: rgba(254, 197, 118, 0.12);
-  color: ${(props) => props.theme.colors.accent1};
 `;
 
 export const CardTitle = styled.h3`
@@ -102,7 +83,6 @@ export const CardTitle = styled.h3`
 `;
 
 export const Kicker = styled.p`
-  font-family: ${(props) => props.theme.fonts.mono};
   font-size: 14px;
   line-height: 1.5;
   color: ${(props) => props.theme.colors.accent1};
@@ -115,12 +95,11 @@ export const ChipList = styled.ul`
 `;
 
 export const Chip = styled.li`
-  font-family: ${(props) => props.theme.fonts.mono};
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.2;
-  padding: 7px 10px;
+  padding: 7px 12px;
   border-radius: 999px;
-  border: 1px solid ${(props) => props.theme.colors.border};
+  background: rgba(255, 255, 255, 0.06);
   color: ${(props) => props.theme.colors.textMuted};
 `;
 
@@ -146,7 +125,6 @@ export const ButtonLink = styled.a`
   min-height: 48px;
   padding: 0 28px;
   border-radius: 999px;
-  border: 1px solid transparent;
   font-family: ${(props) => props.theme.fonts.title};
   font-size: 16px;
   font-weight: 600;
@@ -166,10 +144,9 @@ export const ButtonLink = styled.a`
 
 export const ButtonLinkSecondary = styled(ButtonLink)`
   color: #fff;
-  background: transparent;
-  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.08);
 
   &:hover {
-    border-color: #fff;
+    background: rgba(255, 255, 255, 0.14);
   }
 `;
