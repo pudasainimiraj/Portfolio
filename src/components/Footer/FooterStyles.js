@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const FooterWrap = styled.footer`
-  border-top: 1px solid ${(props) => props.theme.colors.border};
+  background: ${(props) => props.theme.colors.surface};
 `;
 
 export const FooterGrid = styled.div`
@@ -34,7 +34,7 @@ export const FooterLink = styled.a`
   display: inline-flex;
   align-items: center;
   min-height: 36px;
-  font-size: 15px;
+  font-size: 16px;
   color: ${(props) => props.theme.colors.textMuted};
   transition: color 0.2s ease;
 
@@ -44,8 +44,7 @@ export const FooterLink = styled.a`
 `;
 
 export const Bottom = styled.div`
-  padding: 20px 0;
-  border-top: 1px solid ${(props) => props.theme.colors.border};
-  font-size: 13px;
+  padding: 0 0 32px;
+  font-size: 14px;
   color: ${(props) => props.theme.colors.textSubtle};
 `;

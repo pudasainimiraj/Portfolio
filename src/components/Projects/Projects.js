@@ -1,5 +1,4 @@
 import React from 'react';
-import { FiArrowUpRight } from 'react-icons/fi';
 
 import { Card, CardTitle, Chip, ChipList, Container, Kicker, Section, SectionHeader, SectionText, SectionTitle, TextLink } from '../../styles/GlobalComponents';
 import { projects } from '../../constants/constants';
@@ -28,11 +27,11 @@ const Projects = () => (
             </ChipList>
             <Links>
               <TextLink href={p.code} target="_blank" rel="noopener noreferrer">
-                Code <FiArrowUpRight size={16} />
+                Code
               </TextLink>
               {p.demo && (
                 <TextLink href={p.demo} target="_blank" rel="noopener noreferrer">
-                  Live demo <FiArrowUpRight size={16} />
+                  Live demo
                 </TextLink>
               )}
             </Links>

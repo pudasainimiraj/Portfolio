@@ -1,9 +1,8 @@
 export default {
-  // Display face for headings, a plain readable face for body, mono for data.
+  // Display face for headings, a plain readable face for everything else.
   fonts: {
     title: "'Space Grotesk', 'Helvetica Neue', Arial, sans-serif",
     main: "'Inter', 'Helvetica Neue', Arial, sans-serif",
-    mono: "'SF Mono', ui-monospace, Menlo, Consolas, monospace",
   },
   // One accent colour (amber). Everything else is the page navy and white at four strengths.
   colors: {
