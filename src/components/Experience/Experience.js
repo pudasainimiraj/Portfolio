@@ -48,7 +48,7 @@ const Experience = () => (
               <Period>{entry.period}</Period>
             </Meta>
             <Meta>
-              <RoleTitle>{entry.degree}</RoleTitle>
+              <RoleTitle as="h4">{entry.degree}</RoleTitle>
               <Company>{entry.school}</Company>
             </Meta>
           </Role>

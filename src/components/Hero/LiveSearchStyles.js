@@ -20,9 +20,9 @@ export const Form = styled.form`
 `;
 
 export const Label = styled.label`
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
-  color: #fff;
+  color: ${(props) => props.theme.colors.textStrong};
 `;
 
 export const Field = styled.div`
@@ -41,8 +41,8 @@ const control = (props) => `
   border: 1px solid ${props.theme.colors.border};
   background: ${props.theme.colors.background1};
   font-family: ${props.theme.fonts.main};
-  font-size: 16px;
-  color: #fff;
+  font-size: 1rem;
+  color: ${props.theme.colors.textStrong};
 `;
 
 export const Select = styled.select`
@@ -74,15 +74,17 @@ export const Submit = styled.button`
   border: 0;
   border-radius: 999px;
   font-family: ${(props) => props.theme.fonts.title};
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
   color: ${(props) => props.theme.colors.background1};
   background: ${(props) => props.theme.colors.accent1};
   cursor: pointer;
   transition: transform 0.2s ease;
 
-  &:hover {
-    transform: scale(1.03);
+  @media (hover: hover) {
+    &:hover {
+      transform: scale(1.03);
+    }
   }
 
   &:disabled {
@@ -94,7 +96,7 @@ export const Submit = styled.button`
 
 export const Message = styled.p`
   margin-top: 16px;
-  font-size: 16px;
+  font-size: 1rem;
   color: ${(props) => props.theme.colors.textMuted};
 `;
 
@@ -109,33 +111,37 @@ export const Result = styled.li`
   padding: 16px;
   border-radius: 12px;
   background: ${(props) => props.theme.colors.background1};
+  /* Long URLs in excerpts must wrap, or the item widens the page at 320px. */
+  overflow-wrap: anywhere;
 `;
 
 export const ResultTitle = styled.a`
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
-  color: #fff;
+  color: ${(props) => props.theme.colors.textStrong};
 
-  &:hover {
-    color: ${(props) => props.theme.colors.accent1};
+  @media (hover: hover) {
+    &:hover {
+      color: ${(props) => props.theme.colors.accent1};
+    }
   }
 `;
 
 export const ResultMeta = styled.p`
   margin: 4px 0 8px;
-  font-size: 14px;
+  font-size: 0.875rem;
   color: ${(props) => props.theme.colors.textSubtle};
 `;
 
 export const ResultText = styled.p`
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.6;
   color: ${(props) => props.theme.colors.textMuted};
 `;
 
 export const Caption = styled.p`
   margin-top: 16px;
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.6;
   color: ${(props) => props.theme.colors.textSubtle};
 
@@ -144,8 +150,10 @@ export const Caption = styled.p`
     text-decoration: underline;
     text-underline-offset: 3px;
 
-    &:hover {
-      color: #fff;
+    @media (hover: hover) {
+      &:hover {
+        color: ${(props) => props.theme.colors.textStrong};
+      }
     }
   }
 `;

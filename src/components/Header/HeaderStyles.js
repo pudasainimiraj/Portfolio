@@ -38,10 +38,10 @@ export const Brand = styled.a`
   align-items: center;
   min-height: 44px;
   font-family: ${(props) => props.theme.fonts.title};
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 700;
   letter-spacing: -0.01em;
-  color: #fff;
+  color: ${(props) => props.theme.colors.textStrong};
   white-space: nowrap;
 `;
 
@@ -61,14 +61,16 @@ export const NavLink = styled.a`
   min-height: 44px;
   padding: 0 14px;
   border-radius: 999px;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 500;
   color: ${(props) => props.theme.colors.textMuted};
   transition: color 0.2s ease, background 0.2s ease;
 
-  &:hover {
-    color: #fff;
-    background: rgba(255, 255, 255, 0.06);
+  @media (hover: hover) {
+    &:hover {
+      color: ${(props) => props.theme.colors.textStrong};
+      background: ${(props) => props.theme.colors.fillSubtle};
+    }
   }
 `;
 
@@ -88,9 +90,11 @@ export const IconLink = styled.a`
   color: ${(props) => props.theme.colors.textMuted};
   transition: color 0.2s ease, background 0.2s ease;
 
-  &:hover {
-    color: #fff;
-    background: rgba(255, 255, 255, 0.06);
+  @media (hover: hover) {
+    &:hover {
+      color: ${(props) => props.theme.colors.textStrong};
+      background: ${(props) => props.theme.colors.fillSubtle};
+    }
   }
 `;
 
@@ -101,16 +105,18 @@ export const CvLink = styled.a`
   margin-left: 8px;
   padding: 0 18px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.08);
+  background: ${(props) => props.theme.colors.fill};
   font-family: ${(props) => props.theme.fonts.title};
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
-  color: #fff;
+  color: ${(props) => props.theme.colors.textStrong};
   white-space: nowrap;
   transition: background 0.2s ease;
 
-  &:hover {
-    background: rgba(255, 255, 255, 0.14);
+  @media (hover: hover) {
+    &:hover {
+      background: ${(props) => props.theme.colors.fillHover};
+    }
   }
 
   @media ${(props) => props.theme.breakpoints.sm} {

@@ -15,7 +15,7 @@ async function search(repositoryId, query, mode) {
   });
   const data = await res.json().catch(() => null);
   if (!res.ok) {
-    const error = new Error((data && data.message) || `The search failed (${res.status}).`);
+    const error = new Error((data && data.message) || '');
     error.status = res.status;
     throw error;
   }
@@ -69,7 +69,12 @@ const LiveSearch = () => {
       }
       setState({ kind: 'done', response, fallback });
     } catch (error) {
-      setState({ kind: 'error', message: error.message });
+      // A 4xx message from the API says what to change in the query; anything else gets a next step.
+      const message =
+        error.status < 500 && error.message
+          ? error.message
+          : 'Unable to reach ContextTrace. Try again, or open the full demo.';
+      setState({ kind: 'error', message });
     }
   };
 
@@ -100,7 +105,7 @@ const LiveSearch = () => {
             required
           />
           <Submit type="submit" disabled={loading}>
-            {loading ? 'Searching' : 'Search'}
+            {loading ? 'Searching…' : 'Search'}
           </Submit>
         </Field>
       </Form>

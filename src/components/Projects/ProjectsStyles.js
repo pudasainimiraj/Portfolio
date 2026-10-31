@@ -16,12 +16,12 @@ export const Grid = styled.div`
 
 export const Description = styled.p`
   flex: 1;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.6;
   color: ${(props) => props.theme.colors.textMuted};
 
   @media ${(props) => props.theme.breakpoints.sm} {
-    font-size: 17px;
+    font-size: 1.0625rem;
   }
 `;
 
@@ -29,7 +29,7 @@ export const Metric = styled.p`
   padding: 12px 16px;
   border-radius: 10px;
   background: rgba(254, 197, 118, 0.1);
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.5;
   color: ${(props) => props.theme.colors.accent1};
 `;

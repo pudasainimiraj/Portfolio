@@ -26,11 +26,11 @@ const Projects = () => (
               ))}
             </ChipList>
             <Links>
-              <TextLink href={p.code} target="_blank" rel="noopener noreferrer">
+              <TextLink href={p.code} target="_blank" rel="noopener noreferrer" aria-label={`Code for ${p.title}`}>
                 Code
               </TextLink>
               {p.demo && (
-                <TextLink href={p.demo} target="_blank" rel="noopener noreferrer">
+                <TextLink href={p.demo} target="_blank" rel="noopener noreferrer" aria-label={`Live demo of ${p.title}`}>
                   Live demo
                 </TextLink>
               )}

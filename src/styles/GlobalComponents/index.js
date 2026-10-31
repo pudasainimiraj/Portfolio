@@ -34,30 +34,30 @@ export const SectionHeader = styled.div`
 `;
 
 export const SectionTitle = styled.h2`
-  font-size: 48px;
+  font-size: 3rem;
   line-height: 1.15;
   font-weight: 700;
   letter-spacing: -0.02em;
-  color: #fff;
+  color: ${(props) => props.theme.colors.textStrong};
   margin-bottom: 16px;
 
   @media ${(props) => props.theme.breakpoints.md} {
-    font-size: 36px;
+    font-size: 2.25rem;
   }
 
   @media ${(props) => props.theme.breakpoints.sm} {
-    font-size: 30px;
+    font-size: 1.875rem;
     margin-bottom: 12px;
   }
 `;
 
 export const SectionText = styled.p`
-  font-size: 18px;
+  font-size: 1.125rem;
   line-height: 1.7;
   color: ${(props) => props.theme.colors.textMuted};
 
   @media ${(props) => props.theme.breakpoints.sm} {
-    font-size: 17px;
+    font-size: 1.0625rem;
   }
 `;
 
@@ -76,14 +76,14 @@ export const Card = styled.div`
 `;
 
 export const CardTitle = styled.h3`
-  font-size: 24px;
+  font-size: 1.5rem;
   line-height: 1.25;
   font-weight: 700;
-  color: #fff;
+  color: ${(props) => props.theme.colors.textStrong};
 `;
 
 export const Kicker = styled.p`
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.5;
   color: ${(props) => props.theme.colors.accent1};
 `;
@@ -95,11 +95,11 @@ export const ChipList = styled.ul`
 `;
 
 export const Chip = styled.li`
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.2;
   padding: 7px 12px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.06);
+  background: ${(props) => props.theme.colors.fillSubtle};
   color: ${(props) => props.theme.colors.textMuted};
 `;
 
@@ -110,11 +110,9 @@ export const TextLink = styled.a`
   min-height: 44px;
   font-weight: 600;
   color: ${(props) => props.theme.colors.accent1};
-
-  &:hover {
-    text-decoration: underline;
-    text-underline-offset: 4px;
-  }
+  /* Amber alone also marks plain text (company, tagline, metric), so links keep an underline. */
+  text-decoration: underline;
+  text-underline-offset: 4px;
 `;
 
 export const ButtonLink = styled.a`
@@ -126,15 +124,17 @@ export const ButtonLink = styled.a`
   padding: 0 28px;
   border-radius: 999px;
   font-family: ${(props) => props.theme.fonts.title};
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
   line-height: 1;
   color: ${(props) => props.theme.colors.background1};
   background: ${(props) => props.theme.colors.accent1};
   transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
 
-  &:hover {
-    transform: scale(1.03);
+  @media (hover: hover) {
+    &:hover {
+      transform: scale(1.03);
+    }
   }
 
   @media ${(props) => props.theme.breakpoints.sm} {
@@ -143,10 +143,12 @@ export const ButtonLink = styled.a`
 `;
 
 export const ButtonLinkSecondary = styled(ButtonLink)`
-  color: #fff;
-  background: rgba(255, 255, 255, 0.08);
+  color: ${(props) => props.theme.colors.textStrong};
+  background: ${(props) => props.theme.colors.fill};
 
-  &:hover {
-    background: rgba(255, 255, 255, 0.14);
+  @media (hover: hover) {
+    &:hover {
+      background: ${(props) => props.theme.colors.fillHover};
+    }
   }
 `;

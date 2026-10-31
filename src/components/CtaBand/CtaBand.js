@@ -27,18 +27,18 @@ const Inner = styled.div`
 
 const Statement = styled.p`
   font-family: ${(props) => props.theme.fonts.title};
-  font-size: 36px;
+  font-size: 2.25rem;
   line-height: 1.25;
   font-weight: 700;
   letter-spacing: -0.02em;
-  color: #fff;
+  color: ${(props) => props.theme.colors.textStrong};
 
   @media ${(props) => props.theme.breakpoints.md} {
-    font-size: 28px;
+    font-size: 1.75rem;
   }
 
   @media ${(props) => props.theme.breakpoints.sm} {
-    font-size: 24px;
+    font-size: 1.5rem;
   }
 `;
 

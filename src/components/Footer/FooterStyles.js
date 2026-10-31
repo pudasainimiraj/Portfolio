@@ -23,28 +23,30 @@ export const Column = styled.div`
   flex-direction: column;
 `;
 
-export const ColumnTitle = styled.h4`
+export const ColumnTitle = styled.h2`
   margin-bottom: 8px;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 700;
-  color: #fff;
+  color: ${(props) => props.theme.colors.textStrong};
 `;
 
 export const FooterLink = styled.a`
   display: inline-flex;
   align-items: center;
   min-height: 36px;
-  font-size: 16px;
+  font-size: 1rem;
   color: ${(props) => props.theme.colors.textMuted};
   transition: color 0.2s ease;
 
-  &:hover {
-    color: #fff;
+  @media (hover: hover) {
+    &:hover {
+      color: ${(props) => props.theme.colors.textStrong};
+    }
   }
 `;
 
 export const Bottom = styled.div`
   padding: 0 0 32px;
-  font-size: 14px;
+  font-size: 0.875rem;
   color: ${(props) => props.theme.colors.textSubtle};
 `;
