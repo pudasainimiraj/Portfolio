@@ -19,14 +19,14 @@ const GlobalStyles = createGlobalStyle`
   }
   body {
     font-family: ${(props) => props.theme.fonts.main};
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 1.65;
     background: ${(props) => props.theme.colors.background1};
-    color: ${(props) => props.theme.colors.primary1};
+    color: ${(props) => props.theme.colors.text};
     -webkit-font-smoothing: antialiased;
 
     @media ${(props) => props.theme.breakpoints.sm} {
-      font-size: 17px;
+      font-size: 1.0625rem;
     }
   }
   h1, h2, h3, h4, h5, h6 {

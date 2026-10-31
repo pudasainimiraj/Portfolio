@@ -22,46 +22,47 @@ export const HeroInner = styled.div`
 
 export const Title = styled.h1`
   max-width: 900px;
-  font-size: 60px;
+  font-size: 3.75rem;
   line-height: 1.05;
   font-weight: 700;
   letter-spacing: -0.025em;
-  color: #fff;
+  color: ${(props) => props.theme.colors.textStrong};
 
   @media ${(props) => props.theme.breakpoints.md} {
-    font-size: 48px;
+    font-size: 3rem;
   }
 
   @media ${(props) => props.theme.breakpoints.sm} {
-    font-size: 36px;
+    font-size: 2.25rem;
   }
 `;
 
 export const Sub = styled.p`
   max-width: 760px;
   font-family: ${(props) => props.theme.fonts.title};
-  font-size: 24px;
+  font-size: 1.5rem;
   line-height: 1.4;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.9);
+  color: ${(props) => props.theme.colors.text};
 
   @media ${(props) => props.theme.breakpoints.md} {
-    font-size: 20px;
+    font-size: 1.25rem;
   }
 
   @media ${(props) => props.theme.breakpoints.sm} {
-    font-size: 18px;
+    font-size: 1.125rem;
   }
 `;
 
 export const Body = styled.p`
   max-width: 720px;
-  font-size: 18px;
+  font-size: 1.125rem;
+  text-align: start;
   line-height: 1.7;
   color: ${(props) => props.theme.colors.textMuted};
 
   @media ${(props) => props.theme.breakpoints.sm} {
-    font-size: 17px;
+    font-size: 1.0625rem;
   }
 `;
 
@@ -80,7 +81,7 @@ export const Actions = styled.div`
 `;
 
 export const Tertiary = styled.p`
-  font-size: 16px;
+  font-size: 1rem;
   color: ${(props) => props.theme.colors.textSubtle};
 
   a {
@@ -91,8 +92,10 @@ export const Tertiary = styled.p`
     text-decoration: underline;
     text-underline-offset: 4px;
 
-    &:hover {
-      color: #fff;
+    @media (hover: hover) {
+      &:hover {
+        color: ${(props) => props.theme.colors.textStrong};
+      }
     }
   }
 `;

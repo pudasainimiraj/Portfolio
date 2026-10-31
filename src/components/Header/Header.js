@@ -34,7 +34,7 @@ const Header = () => {
           <IconLink href={site.linkedin} aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
             <FiLinkedin size={22} />
           </IconLink>
-          <CvLink href={asset(site.cv)}>CV</CvLink>
+          <CvLink href={asset(site.cv)} download>CV</CvLink>
         </Actions>
       </Inner>
     </Bar>

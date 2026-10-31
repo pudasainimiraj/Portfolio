@@ -28,24 +28,25 @@ export const Meta = styled.div`
 `;
 
 export const RoleTitle = styled.h3`
-  font-size: 24px;
+  font-size: 1.5rem;
   line-height: 1.3;
   font-weight: 700;
-  color: #fff;
+  color: ${(props) => props.theme.colors.textStrong};
 `;
 
 export const Company = styled.p`
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
   color: ${(props) => props.theme.colors.accent1};
 `;
 
 export const Period = styled.p`
-  font-size: 14px;
+  font-size: 0.875rem;
   color: ${(props) => props.theme.colors.textSubtle};
 `;
 
 export const Bullets = styled.ul`
+  max-width: 65ch;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -53,7 +54,7 @@ export const Bullets = styled.ul`
   li {
     position: relative;
     padding-left: 20px;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 1.6;
     color: ${(props) => props.theme.colors.textMuted};
 
@@ -71,7 +72,7 @@ export const Bullets = styled.ul`
 
   @media ${(props) => props.theme.breakpoints.sm} {
     li {
-      font-size: 17px;
+      font-size: 1.0625rem;
     }
   }
 `;
@@ -82,14 +83,14 @@ export const StackRow = styled.div`
 
 export const SubTitle = styled.h3`
   margin: 88px 0 32px;
-  font-size: 36px;
+  font-size: 2.25rem;
   line-height: 1.2;
   font-weight: 700;
   letter-spacing: -0.02em;
-  color: #fff;
+  color: ${(props) => props.theme.colors.textStrong};
 
   @media ${(props) => props.theme.breakpoints.md} {
     margin: 80px 0 24px;
-    font-size: 28px;
+    font-size: 1.75rem;
   }
 `;

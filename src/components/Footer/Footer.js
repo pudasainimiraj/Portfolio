@@ -11,7 +11,7 @@ const Footer = () => (
         <Column>
           <ColumnTitle>Contact</ColumnTitle>
           <FooterLink href={`mailto:${site.email}`}>{site.email}</FooterLink>
-          <FooterLink href={asset(site.cv)}>Download CV</FooterLink>
+          <FooterLink href={asset(site.cv)} download>Download CV</FooterLink>
         </Column>
         <Column>
           <ColumnTitle>Profiles</ColumnTitle>
@@ -23,6 +23,7 @@ const Footer = () => (
           <FooterLink href="#projects">Projects</FooterLink>
           <FooterLink href="#skills">Skills</FooterLink>
           <FooterLink href="#experience">Experience</FooterLink>
+          <FooterLink href="#contact">Contact</FooterLink>
         </Column>
       </FooterGrid>
       <Bottom>© {new Date().getFullYear()} {site.name}</Bottom>

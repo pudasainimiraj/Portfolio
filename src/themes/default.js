@@ -6,13 +6,16 @@ export default {
   },
   // One accent colour (amber). Everything else is the page navy and white at four strengths.
   colors: {
-    primary1: "hsl(204,23.8%,95.9%)",
+    text: "hsl(204,23.8%,95.9%)",
+    textStrong: "#fff",
     background1: "#0F1624",
     accent1: "hsl(34.9,98.6%,72.9%)",
-    button: "hsl(205.1,100%,36.1%)",
-    background2: "hsl(232.7,27.3%,23.7%)",
     surface: "#141C2E",
-    border: "rgba(255, 255, 255, 0.1)",
+    fillSubtle: "rgba(255, 255, 255, 0.06)",
+    fill: "rgba(255, 255, 255, 0.08)",
+    fillHover: "rgba(255, 255, 255, 0.14)",
+    // Input and select edges: 3.58:1 against surface (WCAG 1.4.11 needs 3:1).
+    border: "rgba(255, 255, 255, 0.4)",
     textMuted: "rgba(255, 255, 255, 0.72)",
     textSubtle: "rgba(255, 255, 255, 0.5)",
   },
